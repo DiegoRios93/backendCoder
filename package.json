@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "express": "^4.17.3",
+    "moment": "^2.29.3",
+    "nodemon": "^2.0.15"
+  },
+  "name": "backendcoder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon clase6/servidor.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiegoRios93/backendCoder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiegoRios93/backendCoder/issues"
+  },
+  "homepage": "https://github.com/DiegoRios93/backendCoder#readme",
+  "description": ""
+}

@@ -29,10 +29,10 @@ class Usuario {
     }
 }
 
-const User = new Usuario ("Diego", "Rios", [{autor: "Robert K", nombre: "Padre Rico, Padre Pobre"},{autor: "Robert K", nombre: "El cuadrante del flujo de dinero"}], ["pato", "uma"]);
+const user = new Usuario ("Diego", "Rios", [{autor: "Robert K", nombre: "Padre Rico, Padre Pobre"},{autor: "Robert K", nombre: "El cuadrante del flujo de dinero"}], ["pato", "uma"]);
 
-User.getFullName();
-User.addMascota("gato");
-User.addBook("Paulo Cohelo", "El alquimista");
-User.getBookNames();
-User.countMascotas();
+user.getFullName();
+user.addMascota("gato");
+user.addBook("Paulo Cohelo", "El alquimista");
+user.getBookNames();
+user.countMascotas();

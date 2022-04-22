@@ -1,0 +1,7 @@
+[
+{"nombre":"Remera","price":123.45,"id":1},
+{"nombre":"Pantalon","price":235.56,"id":2},
+{"nombre":"Short","price":235.56,"id":3},
+{"nombre":"Buzo","price":235.56,"id":4},
+{"nombre":"Campera","price":235.56,"id":5}
+]
