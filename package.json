@@ -8,6 +8,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start1": "nodemon clase6entregable/server.js",
     "start": "nodemon clase6/servidor.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

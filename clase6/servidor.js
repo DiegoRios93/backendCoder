@@ -36,3 +36,4 @@ app.get("/visitas", (req,res)=>{
 app.get("/fyh", (req,res)=>{
     res.send({fyh: new Date().toLocaleString()})
 })
+
