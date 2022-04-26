@@ -9,16 +9,18 @@ app.listen(8081)
 console.log(`Servidor express escuchando en el puerto ${PORT}`)
 
 app.get('/', (req, res)=>{
-    res.send("En el /products se verá, reflejados los productos y en /productoRandom uno de los productos elegido al azar")
+    res.send("En el /productos se verá, reflejados los productos y en /productoRandom uno de los productos elegido al azar")
+});
+
+
+app.get('/productos',async (req, res)=>{
+    console.log("mostrando productos")
+    const todos = await contenedor2.getAll()
+    res.json(todos)
 })
 
-
-app.get('/productos', (req, res)=>{
-    const todos = contenedor2.getAll()
-    res.send(todos)
-})
-
-app.get('/productoRandom', (req, res)=>{
-    const todos = contenedor2.getAll()
-    res.send()
+app.get('/productoRandom', async (req, res)=>{
+    console.log("mostrando producto elegido al azar")
+    const mostrarAzar = await contenedor2.rand()
+    res.send(mostrarAzar)
 })

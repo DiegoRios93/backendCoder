@@ -49,11 +49,24 @@ class Contenedor{
         try {
             let contenido = await fs.promises.readFile(this.file, 'utf-8');
             const data = JSON.parse(contenido); 
-            console.log(data)
+            return data;
         } catch (error) {
             console.log(error);
         }
     }
+    //
+    async rand(){
+        try {
+            let contenido = await fs.promises.readFile(this.file, 'utf-8');
+            const data = JSON.parse(contenido); 
+            let azar = Math.floor(Math.random()*data.length);
+            let valor = data[azar];
+            return valor;
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    //
     async deleteById(id){
         try {
             let contenido = await fs.promises.readFile(this.file, 'utf-8');
