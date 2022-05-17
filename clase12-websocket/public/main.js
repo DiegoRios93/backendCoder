@@ -1,5 +1,5 @@
-//const socket = io()
-const socket = io.connect('http://localhost:8092', { forceNew: true });
+const socket = io()
+//const socket = io.connect('http://localhost:8092', { forceNew: true });
 
 
 const divMessages = document.querySelector('#messages')
@@ -18,7 +18,7 @@ button.addEventListener("click", (e)=>{
 
 socket.on('messages', (messages)=>{
     console.log(messages)
-    divMessages.innerHTML = messages.map(mensaje=>{
+    divMessages.innerHTML = messages.map(message=>{
         return(
             `<div>
                 <strong>${message.author}</strong>

@@ -19,6 +19,12 @@ app.use(express.static(__dirname+'/public'))
 io.on('connection',(socket)=>{
     console.log('websocket funcionando', socket.id)
     socket.emit('messages', messages)
+
+    socket.on("newMessage", message=>{
+        messages.push(message)
+        io.socket.emit('messages', messages)
+    })
+    
 })
 
 
