@@ -5,12 +5,14 @@
     "express-handlebars": "^6.0.6",
     "moment": "^2.29.3",
     "nodemon": "^2.0.15",
+    "socket.io": "^4.5.1",
     "underscore": "^1.13.3"
   },
   "name": "backendcoder",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start4": "nodemon clase12-websocket/server.js",
     "start3": "nodemon clase10/index.js",
     "start2": "nodemon clase8/server.js",
     "start1": "nodemon clase6entregable/server.js",
