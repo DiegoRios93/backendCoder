@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "ejs": "^3.1.8",
     "express": "^4.17.3",
+    "express-handlebars": "^6.0.6",
     "moment": "^2.29.3",
     "nodemon": "^2.0.15",
     "underscore": "^1.13.3"
@@ -9,7 +11,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start3": "nodemon index.js",
+    "start3": "nodemon clase10/index.js",
     "start2": "nodemon clase8/server.js",
     "start1": "nodemon clase6entregable/server.js",
     "start": "nodemon clase6/servidor.js",
