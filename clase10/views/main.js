@@ -14,7 +14,7 @@ button.addEventListener("click", (event)=>{
         text: inputTexto
     }
     socket.emit("newMessage", message)
-})
+});
 
 socket.on('messages', (messages)=>{
     console.log(messages)
@@ -26,4 +26,6 @@ socket.on('messages', (messages)=>{
             </div>`
         )
     }).join(" ")
-})
+});
+
+

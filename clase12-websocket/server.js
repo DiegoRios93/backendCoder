@@ -14,20 +14,19 @@ const messages = [
 
 //midleware
 app.use(express.static(__dirname+'/public'))
+app.use(express.urlencoded({ extended: true }));
 
 // NUEVO SERVIDOR
 io.on('connection',(socket)=>{
-    console.log('websocket funcionando', socket.id)
+    console.log('New client connected id:', socket.id)
     socket.emit('messages', messages)
 
     socket.on("newMessage", message=>{
         messages.push(message)
-        io.socket.emit('messages', messages)
+        io.sockets.emit('messages', messages)
     })
     
 })
-
-
 
 const PORT = 8092
 httpServer.listen(PORT, ()=>{
