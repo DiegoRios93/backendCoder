@@ -32,45 +32,30 @@
     </div>
   </nav>
 
-
-<main class="container-fluid d-flex flex-column align-items-center p-5 ">
-<h1 class="mb-5">Agregar Productos</h1>
+<!-- Formulario para agregar productos -->
+<main class="container-fluid d-flex flex-column align-items-center p-2 ">
+<h1 class="mb-3">Agregar Productos</h1>
   
   <form action="/api/productos" method="post">
-    Marca: <input class="form-control" type="text" name="title" /><br /><br />
-    Precio: <input class="form-control" type="number" name="price" /><br /><br />
-  
+    Marca: <input class="form-control" type="text" name="title" id="marca"/><br />
+    Precio: <input class="form-control" type="number" name="price" id="precio"/><br />
     <button
-      type="submit" class="btn btn-primary">
+      type="submit" class="btn btn-primary" id="adicion">
       Agregar producto
     </button>
-    
   </form>
+</main>
+<!-- Fin formulario -->
 <br />
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">id</th>
-      <th scope="col">Title</th>
-      <th scope="col">Prices</th>
-    </tr>
-  </thead>
-  <tbody>
-      <% productos.forEach(producto =>{ %>
-          <tr>
-              <th scope="row"><%= producto.id %></th>
-              <td><%= producto.title %></td>
-              <td>$<%= producto.price %></td>
-          </tr>  
-     <% })%>
-   
-  </tbody>
-</table>
-<a href="http://localhost:8090/" class="btn btn-success">Volver al formulario de carga</a>
+<!-- Mostrar prodcutos -->
+<div id="mostrarP">
+  
+</div>
 <br />
-<br />
-<h2 class="mb-5">Chat de ayuda</h2>
-  <div id="messages"></div>
+<main class="container-fluid d-flex flex-column align-items-center p-2 ">
+<h2 class="mb-4">Chat de ayuda</h2>
+  <div id="messages">
+  </div>
   <br />
   <div>  
     Email: <input class="form-control" type="email" name="email" id="email"/><br /><br />

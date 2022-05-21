@@ -1,11 +1,12 @@
+
 const {Router} = require("express");
 const Producto = require('./container/contenedor');
-//const path = require("path");
+const path = require("path");
 
 const productoDePrueba = new Producto();
 
 
-// arrancar con algunos prodcuts
+// // arrancar con algunos prodcuts
 productoDePrueba.guardarProducto({title: 'Adidas', price: 500, thumbnail: 'urlDePrueba'});
 productoDePrueba.guardarProducto({title: 'Nike', price: 480, thumbnail: 'urlDePrueba'});
 productoDePrueba.guardarProducto({title: 'Head', price: 350, thumbnail: 'urlDePrueba'});
@@ -29,7 +30,7 @@ router.get('/api/productos/:id', (req, res)=>{
 router.post('/api/productos', (req, res)=>{
     const producto = req.body;
     productoDePrueba.guardarProducto(producto);
-    res.redirect("/api/productos")
+    res.redirect("/")
 })
 
 router.put('/api/productos/:id', (req, res)=>{
