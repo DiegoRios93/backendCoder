@@ -1,6 +1,6 @@
 const {Router} = require("express");
 const Producto = require('./container/contenedor');
-const path = require("path");
+//const path = require("path");
 
 const productoDePrueba = new Producto();
 
@@ -29,7 +29,6 @@ router.get('/api/productos/:id', (req, res)=>{
 router.post('/api/productos', (req, res)=>{
     const producto = req.body;
     productoDePrueba.guardarProducto(producto);
-    //res.json(productoDePrueba.obtenerProductoPorId(productoDePrueba.obtenerTodosLosProductos().length));
     res.redirect("/api/productos")
 })
 

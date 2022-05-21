@@ -4,26 +4,35 @@ const http = require('http')
 const app = express();
 const ppal = require ('./rutas.js');
 const path = require ('path');
+const moment = require('moment')
 //////////////////////////////
 //websocket
 
-
+let now = moment()
 const httpServer = http.createServer(app)
 const io = new ioServer(httpServer)
 
 const messages = [
-    {author: "Juan", text: "Hola, como va"},
-    {author: "Pedro", text: "Muy bien cheee!"},
-    {author: "Diego", text: "Genial!"}
+    {author: "diego@gmail.com", text: "Hola, como va", now},
+    {author: "back@gmail.com", text: "Muy bien cheee!", now},
+    {author: "coder@gmail.com", text: "Genial!", now}
 ]
 ////////////
-app.use(express.static(__dirname+'/public'));
-app.use(express.static(__dirname+'./views'));
 
-app.set("public", path.join(__dirname, "/public"));
+const publicPatch = path.resolve(__dirname, 'public')
+app.use(express.static(publicPatch))
+//app.use(express.static(__dirname+'/public'));
+//app.use(express.static(__dirname+'/views'));
+console.log(__dirname+'/views')
+//
+
+
+//
+//app.set("public", path.join(__dirname, "/public"));
+app.set("views", path.join(__dirname, "./views"));
 
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "./views"));
+
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/", ppal);
