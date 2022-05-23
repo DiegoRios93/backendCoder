@@ -1,0 +1,19 @@
+.autor{
+    color: blue;
+}
+.mensaje{
+    color: green;
+}
+.hora{
+    color: brown;
+}
+
+.table{
+    width: 80%;
+    background-color: gray;
+    border: 3px solid black;
+}
+.encabezado{
+    color: greenyellow;
+    background-color: #1A1E13;
+}

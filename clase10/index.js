@@ -9,8 +9,13 @@ const path = require ('path');
 ///////////
 ///////////
 const Producto = require('./container/contenedor');
-productos = [];
+//productos = [];
 const productoDePrueba = new Producto();
+let productos = []
+const allProduct = () =>{
+    productos = productoDePrueba.obtenerTodosLosProductos()
+}
+
 // arrancar con algunos prodcuts
 productoDePrueba.guardarProducto({title: 'Adidas', price: 500, thumbnail: 'urlDePrueba'});
 productoDePrueba.guardarProducto({title: 'Nike', price: 480, thumbnail: 'urlDePrueba'});
@@ -26,15 +31,15 @@ productoDePrueba.guardarProducto({title: 'Head', price: 350, thumbnail: 'urlDePr
 
 const httpServer = http.createServer(app)
 const io = new ioServer(httpServer)
-
+const date = new Date().toLocaleString();
 const messages = [
-    {author: "diego@gmail.com", text: "Hola, como va"},
-    {author: "back@gmail.com", text: "Muy bien cheee!"},
-    {author: "coder@gmail.com", text: "Genial!"}
+    {author: "diego@gmail.com", text: "Hola, como va", date},
+    {author: "back@gmail.com", text: "Muy bien cheee!", date},
+    {author: "coder@gmail.com", text: "Genial!", date}
 ]
 ////////////
 
-const publicPatch = path.resolve(__dirname, 'public')
+const publicPatch = path.resolve(__dirname, './public')
 app.use(express.static(publicPatch))
 console.log(__dirname+'/views')
 
@@ -59,7 +64,9 @@ io.on('connection',(socket)=>{
         io.sockets.emit('messages', messages)
     })
     socket.on("newProduct", producto=>{
-        productos.push(producto)
+        //productos.push(producto)
+        productoDePrueba.guardarProducto(producto)//nuevo
+        allProduct()//nuevo
         io.sockets.emit('productos', productos)
     })
 })

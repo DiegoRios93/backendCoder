@@ -24,24 +24,11 @@ socket.on('productos', (productos)=>{
     console.log(productos)
     divMostrar.innerHTML = productos.map(producto=>{
         return(
-            `<div>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">id</th>
-                            <th scope="col">Marca</th>
-                            <th scope="col">Precio</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">${producto.id}</th>
-                            <td>${producto.title}</td>
-                            <td>${producto.price}</td>
-                        </tr>  
-                    </tbody>
-                </table>
-            </div>`
+            `<tr>
+                <th>${producto.id}</td>
+                <td>${producto.title}</td>
+                <td>$${producto.price}</td>
+            </tr>`
         )
     }).join(" ")
 });
@@ -61,12 +48,11 @@ button.addEventListener("click", (event)=>{
 socket.on('messages', (messages)=>{
     console.log(messages)
     divMessages.innerHTML = messages.map(message=>{
-        message.now = new Date().toLocaleString();
         return(
             `<div>
-                <strong>${message.author}</strong>
-                <span>${message.now}</span>:
-                <em>${message.text}</em>
+                <strong class="autor">${message.author}</strong>
+                <span class="hora">${message.date}</span>:
+                <em class="mensaje">${message.text}</em>
             </div>`
         )
     }).join(" ")

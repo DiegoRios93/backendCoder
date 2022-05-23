@@ -41,7 +41,8 @@ class Producto{
 
     obtenerTodosLosProductos(){
         if(this.productos.length === 0){
-            return {error:'No hay productos'}
+            //return {error:'No hay productos'}
+            return []
         } else{
             return this.productos;
         } 
