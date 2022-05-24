@@ -17,3 +17,10 @@
     color: greenyellow;
     background-color: #1A1E13;
 }
+
+.cuadroMensajes{
+    border-radius: 20px;
+    margin-bottom: 20px;
+    width: 50%;
+    background-color: #D8DC70;
+}
